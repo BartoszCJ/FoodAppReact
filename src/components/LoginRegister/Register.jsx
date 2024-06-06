@@ -23,12 +23,12 @@ function Register() {
       return;
     }
     try {
-      await axios.post("/api/register", {
+      await axios.post('/api/register', {
         username,
         password,
         role,
       });
-      alert("Zarejestrowano pomyślnie");
+      alert('Zarejestrowano pomyślnie');
     } catch (err) {
       setError(err.response ? err.response.data : err.message);
     }

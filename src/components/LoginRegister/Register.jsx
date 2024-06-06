@@ -23,7 +23,7 @@ function Register() {
       return;
     }
     try {
-      await axios.post("/register", {
+      await axios.post("/api/register", {
         username,
         password,
         role,

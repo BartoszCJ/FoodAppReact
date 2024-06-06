@@ -6,8 +6,20 @@ export default defineConfig({
   plugins: [react()],
   base: "/FoodAppReact/",
   server: {
+    port: 5000,
     proxy: {
-      "/login": "http://localhost:5000",
+      "/api": {
+        target: "http://localhost",
+        changeOrigin: true,
+        secure: false,
+        ws: false,
+      },
+      "/PluginsAPI": {
+        target: "https://localhost:5000/",
+        changeOrigin: true,
+        secure: false,
+        ws: false,
+      },
     },
   },
 });
